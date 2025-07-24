@@ -5,6 +5,7 @@ import blog from '../views/blog.vue';
 import works from '../views/works.vue';
 import contact from '../views/contact.vue';
 import notFound from '../views/notFound.vue';
+import admin from '../views/admin.vue';
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,6 +29,11 @@ const router = createRouter({
             path: '/contact',
             name: 'contact',
             component: contact,
+        },
+        {
+            path: '/admin',
+            name: 'admin',
+            component: admin,
         },
 
         {
