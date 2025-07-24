@@ -3,10 +3,10 @@
         <div class="main-cards">
             <UserDataLayout class="col-4" />
             <!--  -->
+            <div class="interst-cards col-4">
                 <InterestLayout class="col-4" />
-            <!-- <div class="interst-cards">
 
-            </div> -->
+            </div>
             <!--  -->
             <WorksLayout class="col-4" />
         </div>
@@ -31,7 +31,6 @@ export default {
 
 .main-cards {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     /* padding: 20px; */
 }

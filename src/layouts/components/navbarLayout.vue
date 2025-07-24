@@ -3,9 +3,9 @@
     <nav :class="['navbar', { dark: isDarkMode }]">
         <div class="navbar-container">
             <!-- Logo qismi -->
-            <div class="navbar-brand">
+            <div class="navbar-brand" @click="$router.push('/')">
                 <div class="logo">
-                    <div class="logo-icon"><i class="fa-solid fa-code"></i></div>
+                    <div class="logo-icon"><i class="fa-solid fa-code"></i> </div>
                     <span class="brand-name">
                         Dasturchi <span class="brand-surname">Bola </span>
                     </span>
@@ -104,23 +104,16 @@ export default {
 </script>
 
 <style scoped>
-@import '../../style.css';
 .navbar {
-    background: rgba(255, 255, 255, 0.1);
+    /* background: rgba(255, 255, 255, 0.1); */
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     padding: 15px 25px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    animation: slideDown 0.6s ease-out;
-    width: 100%;
 }
 
-.navbar.dark {
-    background: rgba(0, 0, 0, 0.3);
-    border-color: rgba(255, 255, 255, 0.1);
-}
+
 
 .navbar-container {
     display: flex;
@@ -141,6 +134,7 @@ export default {
     align-items: center;
     gap: 8px;
     animation: fadeInLeft 0.8s ease-out;
+    cursor: pointer;
 }
 
 @keyframes fadeInLeft {
@@ -207,6 +201,7 @@ export default {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .nav-item::before {

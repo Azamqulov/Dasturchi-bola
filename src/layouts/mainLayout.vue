@@ -17,7 +17,7 @@ export default {
 }
 </script>
 <style lang="css">
-@import '../style.css';
+/* @import '../style.css'; */
 
 .navbar {
     margin: 30px 0;
