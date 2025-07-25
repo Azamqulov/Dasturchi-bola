@@ -13,7 +13,7 @@
                 </button>
             </div>
 
-         
+
 
             <!-- Loading -->
             <div v-if="loading" class="loading">
@@ -30,10 +30,10 @@
                         <!-- Faqat admin foydalanuvchilar uchun edit va delete tugmalari -->
                         <div v-if="isAdmin" class="project-overlay">
                             <button @click="editProject(project)" class="edit-btn">
-                               <i class="fa-solid fa-pen"></i>
+                                <i class="fa-solid fa-pen"></i>
                             </button>
                             <button @click="deleteProject(project.id)" class="delete-btn">
-                               <i class="fa-solid fa-trash"></i>
+                                <i class="fa-solid fa-trash"></i>
                             </button>
                         </div>
                     </div>
@@ -123,7 +123,7 @@
         </div>
     </div>
 </template>
-
+// !! Script
 <script>
 import { ref, onMounted, computed } from 'vue'
 
@@ -161,7 +161,7 @@ export default {
         const checkAdminRole = () => {
             const role = localStorage.getItem('role');
             isAdmin.value = role === 'admin';
-            
+
             console.log('User role:', role);
             console.log('Is admin:', isAdmin.value);
         }
@@ -251,7 +251,7 @@ export default {
                 alert('Faqat admin foydalanuvchilar loyihani tahrirlashi mumkin!')
                 return
             }
-            
+
             editingProject.value = project
             formData.value = { ...project }
             tagsInput.value = project.tags.join(', ')
@@ -354,12 +354,12 @@ export default {
         onMounted(async () => {
             checkAdminRole()
             window.addEventListener('storage', handleStorageChange)
-            
+
             await initializeSampleData()
             await loadProjects()
         })
 
-       
+
 
         return {
             // State
@@ -382,27 +382,29 @@ export default {
     }
 }
 </script>
-
+// !! Styles
 <style scoped>
-
-.projects-container{
-    height: 75vh;
+.projects-container {
+    height: 74vh;
     overflow-y: scroll;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     border-radius: 24px;
     animation: rightTo .4s ease-in-out;
 }
+
 @keyframes rightTo {
     0% {
         opacity: 0;
         transform: translateX(130px);
     }
+
     100% {
         opacity: 1;
         transform: translateX(0);
     }
 }
-::-webkit-scrollbar{
+
+::-webkit-scrollbar {
     width: 0px;
 }
 

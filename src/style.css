@@ -23,3 +23,13 @@
   box-sizing: border-box;
   float: left;
 }
+.higlite {
+    color: #1f80f7;
+    font-weight: 700;
+}
+.col-8 {
+  width: 65%;
+  padding: 10px;
+  box-sizing: border-box;
+  float: left;
+}
