@@ -40,6 +40,7 @@ export default {
 .main-cards {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
     /* padding: 20px; */
 }
 

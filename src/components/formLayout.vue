@@ -18,16 +18,9 @@
         <div class="form-group">
           <div class="input-wrapper">
             <i class="fas fa-user input-icon"></i>
-            <input
-              v-model="formData.firstName"
-              type="text"
-              id="firstName"
-              placeholder="Ismingiz va Familyangiz"
-              required
-              :class="{ 'error': errors.firstName }"
-              @input="clearError('firstName')"
-            >
-          
+            <input v-model="formData.firstName" type="text" id="firstName" placeholder="Ismingiz va Familyangiz"
+              required :class="{ 'error': errors.firstName }" @input="clearError('firstName')">
+
           </div>
           <div v-if="errors.firstName" class="error-message">
             {{ errors.firstName }}
@@ -38,14 +31,8 @@
         <div class="form-group">
           <div class="input-wrapper">
             <i class="fas fa-phone input-icon"></i>
-            <input
-              v-model="formData.phone"
-              type="tel"
-              id="phone"
-              placeholder="+998 90 123 45 67"
-              :class="{ 'error': errors.phone }"
-              @input="clearError('phone')"
-            >
+            <input v-model="formData.phone" type="tel" id="phone" placeholder="+998 90 123 45 67"
+              :class="{ 'error': errors.phone }" @input="clearError('phone')">
           </div>
           <div v-if="errors.phone" class="error-message">
             {{ errors.phone }}
@@ -56,14 +43,8 @@
         <div class="form-group">
           <div class="input-wrapper">
             <i class="fas fa-envelope input-icon"></i>
-            <input
-              v-model="formData.email"
-              type="email"
-              id="email"
-              placeholder="example@gmail.com"
-              :class="{ 'error': errors.email }"
-              @input="clearError('email')"
-            >
+            <input v-model="formData.email" type="email" id="email" placeholder="example@gmail.com"
+              :class="{ 'error': errors.email }" @input="clearError('email')">
           </div>
           <div v-if="errors.email" class="error-message">
             {{ errors.email }}
@@ -74,15 +55,8 @@
         <div class="form-group">
           <div class="textarea-wrapper">
             <i class="fas fa-comment-dots input-icon"></i>
-            <textarea
-              v-model="formData.message"
-              id="message"
-              placeholder="Xabaringizni yozing..."
-              rows="5"
-              required
-              :class="{ 'error': errors.message }"
-              @input="clearError('message')"
-            ></textarea>
+            <textarea v-model="formData.message" id="message" placeholder="Xabaringizni yozing..." rows="5" required
+              :class="{ 'error': errors.message }" @input="clearError('message')"></textarea>
           </div>
           <div v-if="errors.message" class="error-message">
             {{ errors.message }}
@@ -93,12 +67,7 @@
         </div>
 
         <!-- Submit Button -->
-        <button 
-          type="submit" 
-          class="submit-btn"
-          :disabled="isLoading"
-          :class="{ 'loading': isLoading }"
-        >
+        <button type="submit" class="submit-btn" :disabled="isLoading" :class="{ 'loading': isLoading }">
           <span v-if="!isLoading">
             <i class="fab fa-telegram-plane"></i>
             Yuborish
@@ -213,7 +182,7 @@ ${this.formData.message}
       `.trim();
 
       const url = `https://api.telegram.org/bot${this.telegramConfig.botToken}/sendMessage`;
-      
+
       try {
         const response = await fetch(url, {
           method: 'POST',
@@ -249,10 +218,10 @@ ${this.formData.message}
       try {
         // Telegram botga yuborish
         await this.sendToTelegram();
-        
+
         // Muvaffaqiyat xabari ko'rsatish
         this.showSuccess = true;
-        
+
         // Formani tozalash
         this.formData = {
           firstName: '',
@@ -297,18 +266,19 @@ ${this.formData.message}
   width: 100%;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  margin: 10px auto;
   animation: leftTo 0.5s ease-out;
 }
+
 @keyframes leftTo {
-    0% {
-        opacity: 0;
-        transform: translateX(-130px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(-130px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Header */
@@ -333,9 +303,22 @@ ${this.formData.message}
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(-10px); }
-  60% { transform: translateY(-5px); }
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
 }
 
 .form-description {
@@ -350,8 +333,15 @@ ${this.formData.message}
 }
 
 @keyframes slideIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .form-group {
@@ -359,7 +349,8 @@ ${this.formData.message}
   position: relative;
 }
 
-.input-wrapper, .textarea-wrapper {
+.input-wrapper,
+.textarea-wrapper {
   position: relative;
   margin-bottom: 8px;
 }
@@ -374,7 +365,8 @@ ${this.formData.message}
   font-size: 1.1rem;
 }
 
-input, textarea {
+input,
+textarea {
   width: 100%;
   padding: 15px 15px 15px 45px;
   border: 2px solid #e0e0e0;
@@ -385,14 +377,16 @@ input, textarea {
   box-sizing: border-box;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   outline: none;
   border-color: #1f80f7;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
   background: white;
 }
 
-input.error, textarea.error {
+input.error,
+textarea.error {
   border-color: #e74c3c;
   box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
 }
@@ -428,9 +422,19 @@ textarea {
 }
 
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
 }
 
 /* Submit Button */
@@ -488,8 +492,15 @@ textarea {
 }
 
 @keyframes successPop {
-  0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
-  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
 }
 
 .success-message i {
@@ -499,9 +510,17 @@ textarea {
 }
 
 @keyframes checkmark {
-  0% { transform: scale(0); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .success-message h3 {
@@ -520,21 +539,22 @@ textarea {
     padding: 25px;
     margin: 10px;
   }
-  
+
   .form-title {
     font-size: 2rem;
   }
-  
-  input, textarea {
+
+  input,
+  textarea {
     padding: 12px 12px 12px 40px;
   }
-  
+
   .input-icon {
     left: 12px;
   }
-  
 
-  
- 
+
+
+
 }
 </style>

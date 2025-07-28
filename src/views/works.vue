@@ -1,7 +1,7 @@
-<template >
+<template>
     <main class="layouts">
-    <userDataLayout class="col-4" />
-    <ProjectLayot class="col-8" />
+        <userDataLayout class="col-4" />
+        <ProjectLayot class="col-8" />
     </main>
     <footer>
         <footerLayout />
@@ -25,11 +25,14 @@ export default {
     align-items: center;
     justify-content: space-between;
 }
+
 .col-4 {
     width: 33%;
+    height: 74vh;
+    margin-top: 25px;
 }
+
 .col-8 {
     width: 66%;
-    margin-top: 20px;
 }
 </style>

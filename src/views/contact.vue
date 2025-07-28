@@ -20,7 +20,7 @@ export default {
     },
 }
 </script>
-<style lang="css">
+<style lang="css" scoped>
 .contact {
     display: flex;
     justify-content: space-between;
