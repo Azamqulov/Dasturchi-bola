@@ -5,7 +5,7 @@
             <!--  -->
             <div class="interst-cards col-4">
                 <SkillLayout />
-                <!-- <InterestLayout class="col-4" /> -->
+                <InterestLayout class="" />
             </div>
             <!--  -->
             <projectLayot class="col-4" />
